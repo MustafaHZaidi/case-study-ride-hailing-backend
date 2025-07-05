@@ -1,4 +1,4 @@
-const { rides, users } = require('../data/db');
+const { rides, users } = require('../data/mockData');
 const Ride = require('../models/ride');
 
 const requestRide = (req, res) => {

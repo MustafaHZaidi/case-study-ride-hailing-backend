@@ -1,4 +1,4 @@
-const { users } = require('../data/db');
+const { users } = require('../data/mockData');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
@@ -40,7 +40,7 @@ const login = async (req, res) => {
   }
 
   const passwordMatch = await bcrypt.compare(password, user.hashedPassword);
-  
+
   if (!passwordMatch) {
     return res.status(401).json({ message: 'Invalid password' });
   }
