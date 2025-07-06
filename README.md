@@ -155,7 +155,7 @@ View all rides related to a user (passenger or driver)
 - User registration & login (mock passwords with hashing)
 - Role-based logic (passenger vs driver)
 - Ride request lifecycle:
-- Requested → Accepted → InProgress → Completed
+    Requested → Accepted → InProgress → Completed
 - Duplicate ride protection
 - Simple error handling and validation
 - Fully testable with Postman or any REST client
