@@ -16,7 +16,7 @@ It is designed to demonstrate backend design thinking, edge case handling, and r
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/MustafaHZaidi/case-study-ride-hailing-backend.git
+gh repo clone MustafaHZaidi/case-study-ride-hailing-backend
 cd case-study-ride-hailing-backend
 ```
 
