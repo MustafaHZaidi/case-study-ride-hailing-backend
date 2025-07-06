@@ -20,7 +20,7 @@ It is designed to demonstrate backend design thinking, edge case handling, and r
 3. **Run the Server**
    node server.js
 
-** Project Structure **
+**Project Structure**
 ├── controllers/
 │   ├── authController.js
 │   └── rideController.js
@@ -35,8 +35,14 @@ It is designed to demonstrate backend design thinking, edge case handling, and r
 ├── app.js
 ├── server.js
 ├── .gitignore
-├── README.md
+└── README.md
 
-** BASE URL **
+**BASE URL**
 http://localhost:3000/api
+
+**Authentication**
+POST /auth/signup
+Create a new user (passenger or driver)
+
+Request Body:
 
