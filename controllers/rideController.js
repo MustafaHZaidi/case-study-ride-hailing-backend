@@ -112,4 +112,43 @@ const rejectRide = (req, res) => {
   });
 };
 
-module.exports = { requestRide, getRideStatus, getRideHistory, acceptRide, rejectRide };
+const startRide = (req, res) => {
+  const rideId = parseInt(req.params.rideId);
+  const { driverId } = req.body;
+
+  const ride = rides.find(r => r.id === rideId);
+  if (!ride) return res.status(404).json({ message: 'Ride not found' });
+
+  if (ride.driverId !== driverId) {
+    return res.status(403).json({ message: 'You are not assigned to this ride' });
+  }
+
+  if (ride.status !== 'Accepted') {
+    return res.status(400).json({ message: 'Ride cannot be started' });
+  }
+
+  ride.status = 'InProgress';
+  res.status(200).json({ message: 'Ride started', ride });
+};
+
+const completeRide = (req, res) => {
+  const rideId = parseInt(req.params.rideId);
+  const { driverId } = req.body;
+
+  const ride = rides.find(r => r.id === rideId);
+  if (!ride) return res.status(404).json({ message: 'Ride not found' });
+
+  if (ride.driverId !== driverId) {
+    return res.status(403).json({ message: 'You are not assigned to this ride' });
+  }
+
+  if (ride.status !== 'InProgress') {
+    return res.status(400).json({ message: 'Ride cannot be completed' });
+  }
+
+  ride.status = 'Completed';
+  res.status(200).json({ message: 'Ride completed', ride });
+};
+
+
+module.exports = { requestRide, getRideStatus, getRideHistory, acceptRide, rejectRide, startRide, completeRide };
