@@ -1,4 +1,4 @@
-# 🛠️ Ride Hailing Backend – Design Document
+# Ride Hailing Backend – Design Document
 
 ## 1. Tech Stack Used & Why
 
